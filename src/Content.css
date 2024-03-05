@@ -1,0 +1,29 @@
+/* Content.css */
+
+/* Add this CSS for responsiveness */
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .tickerwrapper {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS devices */
+      padding-bottom: 10px; /* Add some padding at the bottom to ensure space for scroll bar */
+    }
+  
+    .list {
+      display: inline-block;
+      padding-left: 0;
+      margin-top: 10px; /* Add some space between the list and other elements */
+    }
+  
+    .listitem {
+      display: inline-block;
+      padding: 5px 10px;
+      margin-right: 5px;
+      background-color: #f4f4f4; /* Add a background color for better readability */
+      border-radius: 10px; /* Add some rounded corners */
+      white-space: nowrap; /* Prevent wrapping */
+    }
+  }
+  

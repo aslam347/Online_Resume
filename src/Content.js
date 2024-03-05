@@ -1,27 +1,25 @@
 import React from 'react';
 import { FaGithub } from "react-icons/fa";
+import './Content.css'; // Import CSS file for styling
 
 const Content = () => {
 
-  const PDF = " http://localhost:3000/Aslam Resume !.pdf";
+  const PDF = "/Aslam_Resume.pdf"; // Updated PDF path
   const hvpoGitHubUrl = "https://github.com/aslam347/HVPO";
   const todoGitHubUrl = "https://github.com/aslam347/TO-DO-LIST";
 
   const downloadFileAtURL = (url) => {
-
-   fetch(url)
+    fetch(url)
       .then((response) => response.blob())
       .then((blob) => {
-        const blobURL = window.URL.createObjectURL(blob); 
-        const fileName = url.split("/").pop();
+        const blobURL = window.URL.createObjectURL(blob);
         const aTag = document.createElement("a");
         aTag.href = blobURL;
-        aTag.setAttribute("download", fileName);
+        aTag.setAttribute("download", "Aslam_Resume.pdf");
         document.body.appendChild(aTag);
         aTag.click();
-        aTag.remove();
+        document.body.removeChild(aTag);
       });
-
   }
 
   return (
@@ -42,7 +40,6 @@ const Content = () => {
         <button className="resume-button" onClick={() => { downloadFileAtURL(PDF) }}>
           Download Resume !
         </button>
-        { /*<button className="contact-button">Contact Me!</button> */} 
       </div>
 
       <div className='about' id="about">
@@ -66,9 +63,9 @@ const Content = () => {
       <div className="skillshead" id="experience">
         <h2>Explore My Skills</h2>
       </div>
-      <div className="outside"> 
-        <div className="tickerwrapper" style={{ border: "2px solid black" }}>
-          <ul className='list' style={{ border: "2px solid black" }}>
+      <div className="outside">
+        <div className="tickerwrapper" >
+          <ul className='list' >
             <li className='listitem' >
               <span> <span>&#8226;</span>HTML</span>
             </li>
